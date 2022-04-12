@@ -1,0 +1,7 @@
+.Canban {
+  height: calc(var(--html-common-height) - var(--canban-margin)*2);
+  margin: var(--canban-margin);
+  display: flex;
+  column-gap: 10px;
+  overflow-x: scroll;
+}

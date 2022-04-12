@@ -1,0 +1,11 @@
+:root {
+  --header-height: 40px;
+  --html-common-height: calc(100vh - var(--header-height));
+  --canban-margin: 10px;
+  --main-link-width: 25px;
+  --main-nav-left-indent: 20px;
+}
+
+html, body, #root, .app-wrapper {
+  height: 100%;
+}
