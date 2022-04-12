@@ -1,13 +1,16 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import s from './Header.module.css';
 
 const Header = (props) => {
+	let isActiveLink = () => {
+		return ({isActive}) => isActive ? s.link + " " + s.active : s.link;
+	};
 	return (
 		<header>
 			<div className={s.nav}>
-				<NavLink to="/" className={s.link}>/</NavLink>
-				<NavLink to="/about" className={s.link}>about</NavLink>
+				<NavLink to="/" className={isActiveLink()}>/</NavLink>
+				<NavLink to="/about" className={isActiveLink()}>about</NavLink>
 			</div>
 			<div>{props.title}</div>
 		</header>

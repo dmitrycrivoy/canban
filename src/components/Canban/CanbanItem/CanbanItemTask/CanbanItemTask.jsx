@@ -3,7 +3,7 @@ import s from './CanbanItemTask.module.css';
 
 const CanbanItemTask = (props) => {
 	return (
-		<div className={s["Canban-item-task"]}>
+		<div className={s.task}>
 			{props.title}
 		</div>
 	);

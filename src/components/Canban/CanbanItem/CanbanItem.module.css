@@ -1,19 +1,31 @@
-.Canban-item {
+.item {
   display: flex;
   flex-direction: column;
   border: 1px solid #000;
   border-radius: 7px;
   min-width: 250px;
 }
-.Canban-item > div {
+
+.item > div {
   padding: 5px;
 }
-.Canban-item-title {
+
+.title {
   border-bottom: 1px solid #000;
   font-weight: bold;
 }
-.Canban-item-content {
+
+.content {
   display: flex;
   flex-direction: column;
   row-gap: 5px;
+}
+
+.content a {
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.content a.active div {
+  box-shadow: 0px 2px 0 0px forestgreen;
 }

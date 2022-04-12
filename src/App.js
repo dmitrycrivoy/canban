@@ -9,8 +9,8 @@ const App = () => {
     <div className="app-wrapper">
       <Header title="Title for Header"/>
       <Routes>
-        <Route path="/" element={<Canban />} />
-        <Route path="about" element={<About />} />
+        <Route path="/*" element={<Canban />} />
+        <Route path="about/*" element={<About />} />
       </Routes>
     </div>
   );

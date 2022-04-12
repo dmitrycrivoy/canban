@@ -38,6 +38,6 @@ header {
 	padding: 0 7px;
 }
 
-.link .active {
+.link.active {
 	background-color: rgb(255, 222, 38);
 } 
