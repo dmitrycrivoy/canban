@@ -29,3 +29,16 @@
 .content a.active div {
   box-shadow: 0px 2px 0 0px forestgreen;
 }
+
+.footer {
+  display: flex;
+  font-size: 16px;
+  color: grey;
+  cursor: pointer;
+}
+
+.newTaskText {
+  font-family: Arial, Helvetica, sans-serif;
+  resize: none;
+  font-size: 14px;
+}

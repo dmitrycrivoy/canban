@@ -6,6 +6,7 @@ const Header = (props) => {
 	let isActiveLink = () => {
 		return ({isActive}) => isActive ? s.link + " " + s.active : s.link;
 	};
+
 	return (
 		<header>
 			<div className={s.nav}>
