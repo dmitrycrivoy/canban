@@ -1,7 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { addTaskActionCreator, updateTaskTextActionCreator } from 'redux/state';
 import s from './CanbanItem.module.css';
 import CanbanItemTask from './CanbanItemTask/CanbanItemTask';
+
 
 const CanbanItem = (props) => {
 	let isActiveLink = () => {
@@ -14,12 +16,15 @@ const CanbanItem = (props) => {
 	let addTask = () => {
 		let newTaskID = footer.current.parentElement.children[1].childElementCount + 1;
 		let canbanItemID = footer.current.parentElement.dataset.id;
-		if (canbanItemID)
-			props.addTask(newTaskID, canbanItemID);
+		if (canbanItemID) {
+			let action = addTaskActionCreator(newTaskID, canbanItemID);
+			props.dispatch(action);
+		}
 	};
 	let updateTaskText = () => {
 		let newTaskText = newTaskTextarea.current.value;
-		props.updateTaskText(newTaskText);
+		let action = updateTaskTextActionCreator(newTaskText);
+		props.dispatch(action);
 	}
 
 	let newTaskText = props.newTaskText;

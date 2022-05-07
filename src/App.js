@@ -12,9 +12,8 @@ const App = (props) => {
       <Routes>
         <Route path="/*" element={
           <Canban 
-            updateTaskText={props.updateTaskText} 
-            addTask={props.addTask} 
-            canbanPage={props.state.canbanPage} 
+            canbanPage={props.state.canbanPage}
+            dispatch={props.dispatch}
           />
         }/>
         <Route path="about/*" element={<About />} />

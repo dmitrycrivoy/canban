@@ -4,7 +4,6 @@ import './Canban.css';
 import CanbanItem from './CanbanItem/CanbanItem';
 
 const Canban = (props) => {
-	let newTaskText = props.canbanPage.newTaskText;
 	let canbanItemsData = props.canbanPage.canbanItems;
 	let canbanItemsElements = canbanItemsData.map( (canbanItem) => {
 		let canbanItemId = canbanItem.id;
@@ -13,9 +12,8 @@ const Canban = (props) => {
 		return (
 			<div className="CanbanItem-wrapper" key={canbanItemId}>
 				<CanbanItem 
-					updateTaskText={props.updateTaskText} 
-					newTaskText={newTaskText} 
-					addTask={props.addTask} 
+					dispatch={props.dispatch} 
+					newTaskText={props.canbanPage.newTaskText} 
 					taskData={taskData} 
 					title={canbanItemTitle} 
 					dataID={canbanItemId}>

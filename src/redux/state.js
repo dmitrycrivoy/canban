@@ -1,3 +1,6 @@
+const ADD_TASK = "ADD-TASK";
+const UPDATE_TASK_TEXT = "UPDATE-TASK-TEXT";
+
 let store = {
     _callSubscriber() {
         console.log("State is changed");
@@ -44,26 +47,27 @@ let store = {
     getState() {
         return this._state;
     },
-    addTask(newTaskID, canbanItemID) {
-        let task = {
-            id: newTaskID,
-            title: this._state.canbanPage.newTaskText,
-            url: `task${Number(canbanItemID) + 1}-${newTaskID}`
-        };
-        if (this._state.canbanPage.newTaskText) {
-            this._state.canbanPage.canbanItems[canbanItemID].taskData.push(task);
-            this._callSubscriber();
-        }
-        else
-            console.log("No new task text");
-    },
-    updateTaskText(newTaskText) {
-        this._state.canbanPage.newTaskText = newTaskText;
-        this._callSubscriber();
-    },
     subscribe(observer) {
         this._callSubscriber = observer;
+    },
+    dispatch(action) {
+        
+    },
+}
+
+export const addTaskActionCreator = (newTaskID, canbanItemID) => {
+    return {
+        type: ADD_TASK,
+        newTaskID,
+        canbanItemID,
     }
+}
+
+export const updateTaskTextActionCreator = (newTaskText) => {
+	return {
+		type: UPDATE_TASK_TEXT,
+		newTaskText,
+	}
 }
 
 export default store;

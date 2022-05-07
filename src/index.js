@@ -11,9 +11,8 @@ let renderEntireTree = () => {
   ReactDOM.render(
     <BrowserRouter>
       <App 
-        updateTaskText={store.updateTaskText.bind(store)} 
-        addTask={store.addTask.bind(store)} 
         state={store.getState()}
+        dispatch={store.dispatch.bind(store)}
       />
     </BrowserRouter>,
     document.getElementById('root')
