@@ -9,11 +9,12 @@ const Canban = (props) => {
 		let canbanItemId = canbanItem.id;
 		let canbanItemTitle = canbanItem.title;
 		let taskData = canbanItem.taskData;
+		let newTaskText = canbanItem.newTaskText;
 		return (
 			<div className="CanbanItem-wrapper" key={canbanItemId}>
 				<CanbanItem 
 					dispatch={props.dispatch} 
-					newTaskText={props.canbanPage.newTaskText} 
+					newTaskText={newTaskText} 
 					taskData={taskData} 
 					title={canbanItemTitle} 
 					dataID={canbanItemId}>

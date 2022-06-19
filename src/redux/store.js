@@ -1,3 +1,5 @@
+import canbanReducer from "./canban-reducer";
+
 const ADD_TASK = "ADD-TASK";
 const UPDATE_TASK_TEXT = "UPDATE-TASK-TEXT";
 
@@ -15,7 +17,8 @@ let store = {
                         { id: 1, title: "Very Important Task", url: "task1-1" },
                         { id: 2, title: "Task 2", url: "task1-2" },
                         { id: 3, title: "Just Task 3", url: "task1-3" },
-                    ]
+                    ],
+                    newTaskText: "New Task 1",
                 },
                 {
                     id: 2,
@@ -23,7 +26,8 @@ let store = {
                     taskData: [
                         { id: 1, title: "Taska", url: "task2-1" },
                         { id: 2, title: "task b", url: "task2-2" },
-                    ]
+                    ],
+                    newTaskText: "New Task 2",
                 },
                 {
                     id: 3,
@@ -33,10 +37,10 @@ let store = {
                         { id: 2, title: "Satta", url: "task3-2" },
                         { id: 3, title: "VerTask", url: "task3-3" },
                         { id: 4, title: "taske", url: "task3-4" },
-                    ]
+                    ],
+                    newTaskText: "New Task 3",
                 },
             ],
-            newTaskText: "New Task",
         },
         aboutPage: [
             {
@@ -51,7 +55,8 @@ let store = {
         this._callSubscriber = observer;
     },
     dispatch(action) {
-        
+        canbanReducer(this._state.canbanPage, action);
+        this._callSubscriber();
     },
 }
 
@@ -63,10 +68,11 @@ export const addTaskActionCreator = (newTaskID, canbanItemID) => {
     }
 }
 
-export const updateTaskTextActionCreator = (newTaskText) => {
+export const updateTaskTextActionCreator = (newTaskText, canbanItemID) => {
 	return {
 		type: UPDATE_TASK_TEXT,
 		newTaskText,
+        canbanItemID
 	}
 }
 
