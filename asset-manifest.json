@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/canban/static/css/main.fa6432f0.css",
+    "main.js": "/canban/static/js/main.50fc05cc.js",
+    "static/js/787.7efd2c76.chunk.js": "/canban/static/js/787.7efd2c76.chunk.js",
+    "index.html": "/canban/index.html",
+    "main.fa6432f0.css.map": "/canban/static/css/main.fa6432f0.css.map",
+    "main.50fc05cc.js.map": "/canban/static/js/main.50fc05cc.js.map",
+    "787.7efd2c76.chunk.js.map": "/canban/static/js/787.7efd2c76.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fa6432f0.css",
+    "static/js/main.50fc05cc.js"
+  ]
+}
